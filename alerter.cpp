@@ -10,6 +10,7 @@ int networkAlertStub(float celcius) {
     // stub always succeeds and returns 200
     if( float(200) <= celcius)
     {
+        std::cout << "celcius = " << celcius <<"\n";
         return 200;
     }
     return 500;
@@ -17,7 +18,6 @@ int networkAlertStub(float celcius) {
 
 void alertInCelcius(float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
-    std::cout << "celcius = " << celcius <<"\n";
     int returnCode = networkAlertStub(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
