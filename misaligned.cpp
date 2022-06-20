@@ -19,7 +19,7 @@ int printColorMap() {
 
 int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
     /* Here I have used the same logic as in printColorMap() function to
-       return pair number from color */
+       return pair number from color inorder to test the logic*/
     return major * 5 + minor;
 }
 
