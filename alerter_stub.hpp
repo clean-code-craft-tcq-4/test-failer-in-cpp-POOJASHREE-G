@@ -3,7 +3,7 @@
 
 namespace alert
 {
-    int networkAlertStub(float);
+    extern int networkAlertStub(float);
 } // namespace alert
 
 #endif
