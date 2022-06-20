@@ -3,6 +3,6 @@
 
 #include <iostream>
 
-int networkAlertStub(float celcius);
+extern int networkAlertStub(float celcius);
 
 #endif
