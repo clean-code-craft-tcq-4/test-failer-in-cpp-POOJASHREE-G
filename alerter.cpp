@@ -8,12 +8,7 @@ int networkAlertStub(float celcius) {
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-    ///if( float(200) <= celcius)
-    //{
-        //std::cout << "celcius = " << celcius <<"\n";
-        //return 200;
-    //}
-    return 500;
+    return 200;
 }
 
 void alertInCelcius(float farenheit) {
@@ -31,6 +26,8 @@ void alertInCelcius(float farenheit) {
 int main() {
     alertInCelcius(400.5);
     alertInCelcius(303.6);
+    assert(networkAlertStub(300.0) == 500); // Since the threshold is 200, i am passing 300 and expecting 500 as a return value.
+    assert(alertFailureCount == 1);
     std::cout << alertFailureCount << " alerts failed.\n";
     std::cout << "All is well (maybe!)\n";
     return 0;
