@@ -4,6 +4,6 @@
 namespace alert
 {
     int networkAlertStub(float);
-} // namespace name
+} // namespace alert
 
 #endif
