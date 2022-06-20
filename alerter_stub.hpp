@@ -1,6 +1,9 @@
 #ifndef ALERTER_STUB_HPP
 #define ALERTER_STUB_HPP
 
-int networkAlertStub(float celcius);
+namespace alert
+{
+    int networkAlertStub(float celcius);
+} // namespace name
 
 #endif
