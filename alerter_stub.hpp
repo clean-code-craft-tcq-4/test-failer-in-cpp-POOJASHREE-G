@@ -3,7 +3,7 @@
 
 namespace alert
 {
-    int networkAlertStub(float celcius);
+    int networkAlertStub(float);
 } // namespace name
 
 #endif
