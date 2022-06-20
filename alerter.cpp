@@ -8,11 +8,11 @@ int networkAlertStub(float celcius) {
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-    if( float(200) <= celcius)
-    {
-        std::cout << "celcius = " << celcius <<"\n";
-        return 200;
-    }
+    ///if( float(200) <= celcius)
+    //{
+        //std::cout << "celcius = " << celcius <<"\n";
+        //return 200;
+    //}
     return 500;
 }
 
