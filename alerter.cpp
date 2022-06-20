@@ -1,18 +1,11 @@
 #include <iostream>
 #include <assert.h>
+#include "alerter_stub.hpp"
 
 int alertFailureCount = 0;
 
-int networkAlertStub(float celcius) {
-    std::cout << "ALERT: Temperature is " << celcius << " celcius.\n";
-    // Return 200 for ok
-    // Return 500 for not-ok
-    // stub always succeeds and returns 200
-    return 200;
-}
-
 void alertInCelcius(float farenheit) {
-    float celcius = (farenheit - 32) * 5 / 9;
+    float celcius = farenheitTOcelcius(farenheit);
     int returnCode = networkAlertStub(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
@@ -23,11 +16,16 @@ void alertInCelcius(float farenheit) {
     }
 }
 
+float farenheitTOcelcius(float farenheit)
+{
+    return (farenheit - 32) * 5 / 9;
+}
+
 int main() {
     alertInCelcius(400.5);
     alertInCelcius(303.6);
-    assert(networkAlertStub(300.0) == 500); // Since the threshold is 200, i am passing 300 and expecting 500 as a return value.
-    assert(alertFailureCount == 1);
+    assert(networkAlertStub(farenheitTOcelcius(float 400.5)) == 500); // Since the threshold is 200 (in celcius), i am passing 204(in celicus) and expecting 500 as a return value.
+    assert(alertFailureCount == 1); // Number of failures doesn't match the count. Its one of the bug.
     std::cout << alertFailureCount << " alerts failed.\n";
     std::cout << "All is well (maybe!)\n";
     return 0;
