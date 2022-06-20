@@ -1,4 +1,5 @@
 #include <iostream>
+#include "alerter_stub.hpp"
 
 int networkAlertStub(float celcius) {
     std::cout << "ALERT: Temperature is " << celcius << " celcius.\n";
