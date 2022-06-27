@@ -52,9 +52,10 @@ void testPairToNumber(MajorColor major, MinorColor minor) {
 
 int main() {
     int result = printColorMap();
-    assert(result == 25);
     buffer1[0].str();
     buffer2[0].str();
+    assert(result == 25);
+
     //assert(buffer1[0].str() == buffer2[0].str());
     //testPairToNumber(BLACK, ORANGE);
     //testPairToNumber(VIOLET, SLATE);
