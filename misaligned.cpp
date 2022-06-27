@@ -52,8 +52,8 @@ void testPairToNumber(MajorColor major, MinorColor minor) {
 
 int main() {
     int result = printColorMap();
-    std::cout << buffer1[0].str() << std::endl;
-    std::cout << buffer2[0].str() << std::endl;
+    std::cout << "fdffd" << buffer1[0].str() << std::endl;
+    std::cout << "dummy" << buffer2[0].str() << std::endl;
     assert(result == 25);
 
     //assert(buffer1[0].str() == buffer2[0].str());
