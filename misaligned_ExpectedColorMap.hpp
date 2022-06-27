@@ -3,15 +3,15 @@
 
 #include <sstream>
 
-extern enum MajorColor;
-extern enum MinorColor;
+enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
+enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
-extern const char* majorColor[];
-extern const char* minorColor[];
+const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
-extern int numberOfMinorColors;
+int numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]);
 
-extern std::stringstream buffer1[25], buffer2[25];
+std::stringstream buffer1[25], buffer2[25];
 
 int GetPairNumberFromColor(MajorColor major, MinorColor minor);
 

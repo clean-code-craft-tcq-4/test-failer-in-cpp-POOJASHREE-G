@@ -6,16 +6,6 @@
 #include "misaligned_TestFunctions.hpp"
 using namespace std;
 
-enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
-enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
-
-const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-
-int numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]);
-
-std::stringstream buffer1[25], buffer2[25];
-
 int printColorMap() {
     int i = 0, j = 0, n = 0;
     for(i = 0; i < 5; i++) {
