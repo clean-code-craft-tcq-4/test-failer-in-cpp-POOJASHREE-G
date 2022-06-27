@@ -17,7 +17,7 @@ int printColorMap() {
     int i = 0, j = 0, n = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            buffer1[n] << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+            std::cout << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
             ++n;
         }
     }
@@ -28,7 +28,7 @@ void expectedprintColorMap() {
     int i = 0, j = 0, n = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            buffer2[n] << (i * 5 + j)+ 1  << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+            std::cout << (i * 5 + j)+ 1  << " \t | " << majorColor[i] << " \t | " << minorColor[i] << "\n";
             ++n;
         }
     }
@@ -52,8 +52,9 @@ void testPairToNumber(MajorColor major, MinorColor minor) {
 
 int main() {
     int result = printColorMap();
-    std::cout << "fdffd" << buffer1[0].str() << std::endl;
-    std::cout << "dummy" << buffer2[0].str() << std::endl;
+    expectedprintColorMap();
+    std::cout << buffer1[10].str() << std::endl;
+    std::cout << buffer2[10].str() << std::endl;
     assert(result == 25);
 
     //assert(buffer1[0].str() == buffer2[0].str());
