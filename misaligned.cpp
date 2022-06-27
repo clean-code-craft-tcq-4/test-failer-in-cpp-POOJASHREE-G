@@ -1,5 +1,7 @@
 #include <iostream>
 #include <assert.h>
+#include <sstream>
+#include <string>
 
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
@@ -9,14 +11,27 @@ const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
 int numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]);
 
+std::stringstream buffer1[25], buffer2[25];
+
 int printColorMap() {
-    int i = 0, j = 0;
+    int i = 0, j = 0, n = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            std::cout << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+            buffer1[n] << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+            ++n;
         }
     }
     return i * j;
+}
+
+void expectedprintColorMap() {
+    int i = 0, j = 0, n = 0;
+    for(i = 0; i < 5; i++) {
+        for(j = 0; j < 5; j++) {
+            buffer2[n] << (i * 5 + j)+ 1  << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+            ++n;
+        }
+    }
 }
 
 int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
@@ -38,8 +53,9 @@ void testPairToNumber(MajorColor major, MinorColor minor) {
 int main() {
     int result = printColorMap();
     assert(result == 25);
-    //testPairToNumber(BLACK, ORANGE);
-    //testPairToNumber(VIOLET, SLATE);
+    testPairToNumber(BLACK, ORANGE);
+    testPairToNumber(VIOLET, SLATE);
+    assert(buffer1[0].str() == buffer2[0].str());
     std::cout << "All is well (maybe!)\n";
     return 0;
 }
