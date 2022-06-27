@@ -3,8 +3,8 @@
 
 #include <sstream>
 
-extern enum MajorColor;
-extern enum MinorColor;
+enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
+enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
 extern const char* majorColor[];
 extern const char* minorColor[];
