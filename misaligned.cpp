@@ -28,7 +28,7 @@ void expectedprintColorMap() {
     int i = 0, j = 0, n = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            std::cout << (i * 5 + j)+ 1  << " \t | " << majorColor[i] << " \t | " << minorColor[i] << "\n";
+            std::cout << (i * 5 + j)+ 1  << "\t| " << majorColor[i] << "\t| " << minorColor[i] << "\n";
             ++n;
         }
     }
