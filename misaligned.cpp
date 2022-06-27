@@ -2,6 +2,9 @@
 #include <assert.h>
 #include <sstream>
 #include <string>
+#include <iomanip>
+#include "misaligned_TestFunctions.hpp"
+using namespace std;
 
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
@@ -17,49 +20,19 @@ int printColorMap() {
     int i = 0, j = 0, n = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            std::cout << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+            buffer1[n] << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
             ++n;
         }
     }
     return i * j;
 }
 
-void expectedprintColorMap() {
-    int i = 0, j = 0, n = 0;
-    for(i = 0; i < 5; i++) {
-        for(j = 0; j < 5; j++) {
-            std::cout << (i * 5 + j)+ 1  << "\t| " << majorColor[i] << "\t| " << minorColor[i] << "\n";
-            ++n;
-        }
-    }
-}
-
-int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
-    /* Here I have used the same logic as in printColorMap() function to
-       return pair number from color inorder to test the logic*/
-    return major * 5 + minor;
-}
-
-int expectedPairNumber(MajorColor major, MinorColor minor) {
-    return major * numberOfMinorColors + minor + 1;
-}
-
-void testPairToNumber(MajorColor major, MinorColor minor) {
-    int pairNumber = GetPairNumberFromColor(major, minor);
-    std::cout << "Got pair number " << pairNumber << std::endl;
-    assert(pairNumber == expectedPairNumber(major, minor));
-}
-
 int main() {
     int result = printColorMap();
-    expectedprintColorMap();
-    std::cout << buffer1[10].str() << std::endl;
-    std::cout << buffer2[10].str() << std::endl;
     assert(result == 25);
-
-    //assert(buffer1[0].str() == buffer2[0].str());
-    //testPairToNumber(BLACK, ORANGE);
-    //testPairToNumber(VIOLET, SLATE);
+    testPairToNumber(BLACK, ORANGE, 12);
+    testPairToNumber(VIOLET, SLATE, 25);
+    testMisAlignment();
     std::cout << "All is well (maybe!)\n";
     return 0;
 }
