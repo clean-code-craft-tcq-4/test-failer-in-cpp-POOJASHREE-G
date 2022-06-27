@@ -53,9 +53,9 @@ void testPairToNumber(MajorColor major, MinorColor minor) {
 int main() {
     int result = printColorMap();
     assert(result == 25);
+    assert(buffer1[0].str() == buffer2[0].str());
     testPairToNumber(BLACK, ORANGE);
     testPairToNumber(VIOLET, SLATE);
-    assert(buffer1[0].str() == buffer2[0].str());
     std::cout << "All is well (maybe!)\n";
     return 0;
 }
