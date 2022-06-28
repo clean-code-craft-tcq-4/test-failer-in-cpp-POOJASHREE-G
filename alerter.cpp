@@ -24,6 +24,7 @@ void alertInCelcius(float farenheit) {
 int main() {
     alertInCelcius(400.5);
     alertInCelcius(303.6);
+    assert(alert::networkAlertStub(farenheitTOcelcius(303.6)) == 200);
     assert(alert::networkAlertStub(farenheitTOcelcius(400.5)) == 500); // Since the threshold is 200 (in celcius), i am passing 204(in celicus) and expecting 500 as a return value.
     assert(alertFailureCount == 1); // Number of failures doesn't match the count. It's a bug.
     std::cout << alertFailureCount << " alerts failed.\n";
