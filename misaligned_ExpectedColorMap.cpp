@@ -9,11 +9,11 @@ using namespace std;
 
 void expectedprintColorMap() {
     int i = 0, j = 0, n = 0;
-    for(i = 0; i < 5; i++) {
-        for(j = 0; j < 5; j++) {
-            cout
-                    << left << setw(5) << (i * 5 + j)+ 1 << "|"
-                    << left << setw(findlargeststring(numberOfMajorColors,majorColor)) << majorColor[i] << "|"
+    for(i = 0; i < numberOfMajorColors; i++) {
+        for(j = 0; j < numberOfMinorColors; j++) {
+            buffer2[n]
+                    << left << setw(5) << (i * 5 + j)+ 1 << "| "
+                    << left << setw(findlargeststring(numberOfMajorColors,majorColor)) << majorColor[i] << " |"
                     << left << setw(findlargeststring(numberOfMinorColors,minorColor)) << minorColor[i]
                     << std::endl;
             ++n;
