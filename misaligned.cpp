@@ -21,8 +21,8 @@ int printColorMap() {
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
             cout
-                    << left << setw(5) << (i * 5 + j)
-                    << left << setw(findlargeststring(numberOfMajorColors,majorColor)) << majorColor[i]
+                    << left << setw(5) << (i * 5 + j)+ 1 << "|"
+                    << left << setw(findlargeststring(numberOfMajorColors,majorColor)) << majorColor[i] << "|"
                     << left << setw(findlargeststring(numberOfMinorColors,minorColor)) << minorColor[i]
                     << std::endl;
             ++n;
