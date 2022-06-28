@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <string>
 #include <iterator>
+#include <cstring>
 using namespace std;
 #include "misaligned_ExpectedColorMap.hpp"
 

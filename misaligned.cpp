@@ -33,8 +33,8 @@ int printColorMap() {
 
 int main() {
     int result = printColorMap();
-    // expectedprintColorMap();
-    // assert(result == 25);
+    expectedprintColorMap();
+    assert(result == 25);
     // testPairToNumber(BLACK, ORANGE, 12);
     // testPairToNumber(VIOLET, SLATE, 25);
     // testMisAlignment();
